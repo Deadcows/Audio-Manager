@@ -11,7 +11,11 @@ public class SoundsBaseEditor : Editor
 		if (GUILayout.Button("Find AudioManager", EditorStyles.toolbarButton))
 		{
 			var manager = FindObjectOfType<AudioManager>();
-			if (manager != null) Selection.activeGameObject = manager.gameObject;
+			if (manager == null) manager = new GameObject("Audio Manager").AddComponent<AudioManager>();
+			manager.Base = target as SoundsBase;
+			EditorUtility.SetDirty(manager);
+
+			Selection.activeGameObject = manager.gameObject;
 		}
 	}
 }

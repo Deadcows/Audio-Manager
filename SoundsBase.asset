@@ -11,4 +11,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c27d2ed78108c948af4897d884b1588, type: 3}
   m_Name: SoundsBase
   m_EditorClassIdentifier: 
-  Sounds: []
+  Sounds:
+  - Type: Footsteps/Indoor
+    Clips:
+    - {fileID: 8300000, guid: 02f981504a16b1143add19dbf2190438, type: 3}
+    - {fileID: 8300000, guid: e071b0c3058d3324b97e677217f26103, type: 3}
+    - {fileID: 8300000, guid: b3e69d131fc2c154299b4628d57ffc83, type: 3}
+    - {fileID: 8300000, guid: 5e45cd61f4918884181e68c1bd322deb, type: 3}
+    - {fileID: 8300000, guid: 02f981504a16b1143add19dbf2190438, type: 3}
+    - {fileID: 8300000, guid: e071b0c3058d3324b97e677217f26103, type: 3}
+    - {fileID: 8300000, guid: b3e69d131fc2c154299b4628d57ffc83, type: 3}
+    - {fileID: 8300000, guid: 5e45cd61f4918884181e68c1bd322deb, type: 3}
+    Id: d63751d6-e2d0-4ac0-a33e-b5cc061c9931
+  - Type: Magic/BlastBlow
+    Clips:
+    - {fileID: 8300000, guid: fed23331a367e004d839088db4c1ea46, type: 3}
+    Id: 2da3864a-05d3-4403-bc5b-0f9e8a4d9baa
+  - Type: Magic/BlastCharge
+    Clips:
+    - {fileID: 8300000, guid: fe641bc80c13cc242b58581035f8f9b7, type: 3}
+    Id: e0e52222-33d8-4576-b24c-0b0bf8b46a7c
+  - Type: Themes/MainTheme
+    Clips:
+    - {fileID: 8300000, guid: 619d82558d532b945ab96510283f539e, type: 3}
+    Id: 679ae2fb-1087-44ce-a68d-8ce50019b2f0

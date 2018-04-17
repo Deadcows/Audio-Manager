@@ -12,7 +12,7 @@ public class AudioManagerEditor : Editor
 {
 
 
-	private static AudioManager Manager { get { return _manager ?? (_manager = FindObjectOfType<AudioManager>()); } }
+	private static AudioManager Manager => _manager ?? (_manager = FindObjectOfType<AudioManager>());
 	private static AudioManager _manager;
 
 	private void OnEnable()
@@ -124,7 +124,7 @@ public class AudioManagerEditor : Editor
 			var newSoundId = newSound.FindPropertyRelative("Id");
 			var newSoundClips = newSound.FindPropertyRelative("Clips");
 
-			newSoundType.stringValue = (_unfoldedGroup == null || _unfoldedGroup.Length == 0) ? "Custom" : _unfoldedGroup;
+			newSoundType.stringValue = string.IsNullOrEmpty(_unfoldedGroup) ? "Custom" : _unfoldedGroup;
 			newSoundId.stringValue = Guid.NewGuid().ToString();
 			AudioManagerUtils.ReplaceArray(newSoundClips, newClips.ToArray<Object>());
 		}
