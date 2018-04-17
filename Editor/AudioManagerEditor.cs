@@ -54,14 +54,14 @@ public class AudioManagerEditor : Editor
 		EditorGUILayout.Space();
 
 		int toReplace = -1;
-		var soundsArray = AudioManagerUtils.AsArray (sounds);
+		var soundsArray = AudioManagerUtils.AsArray(sounds);
 		for (int index = 0; index < soundsArray.Length; index++)
 		{
 			var sound = soundsArray[index];
 
 			var soundType = sound.FindPropertyRelative("Type");
 			var clips = sound.FindPropertyRelative("Clips");
-			var clipsArray = AudioManagerUtils.AsArray (clips);
+			var clipsArray = AudioManagerUtils.AsArray(clips);
 
 			bool toDraw = !soundType.stringValue.Contains('/') || soundType.stringValue.StartsWith(_unfoldedGroup);
 			if (!toDraw) continue;
@@ -119,7 +119,7 @@ public class AudioManagerEditor : Editor
 		var newClips = AudioManagerUtils.DropArea<AudioClip>("Drop to add sound", 50);
 		if (newClips != null)
 		{
-			var newSound = AudioManagerUtils.NewElement (sounds);
+			var newSound = AudioManagerUtils.NewElement(sounds);
 			var newSoundType = newSound.FindPropertyRelative("Type");
 			var newSoundId = newSound.FindPropertyRelative("Id");
 			var newSoundClips = newSound.FindPropertyRelative("Clips");
@@ -143,7 +143,7 @@ public class AudioManagerEditor : Editor
 		}
 	}
 
-	
+
 
 	public static void DrawMenu(GenericMenu.MenuFunction2 callback)
 	{
