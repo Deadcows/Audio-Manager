@@ -10,7 +10,7 @@ public class AreaTheme : ScriptableObject
 	[SerializeField] private RandomSound[] _randomSounds;
 	[SerializeField, Range(0, 1)] private float _baseVolume = 1;
 
-	public string Name => _ambient.Type;
+	public string Name => _ambient.Type == "Custom" ? name : _ambient.Type;
 
     [NotNull]
     public Sound AmbientSound => _ambient;

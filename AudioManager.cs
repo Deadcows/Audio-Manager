@@ -122,6 +122,7 @@ public class AudioManager : MonoBehaviour
 		ActiveTheme = null;
 		foreach (var theme in themes)
 		{
+#if UNITY_EDITOR
 			if (theme == null || !theme.AmbientSound.IsNotEmpty())
 			{
 				Debug.LogError("AddTheme caused: theme is null or empty");
@@ -132,6 +133,7 @@ public class AudioManager : MonoBehaviour
 				Debug.LogError("AddTheme caused: Theme with name " + theme.Name + " already exists");
 				return;
 			}
+#endif
 
 			_themes.Add(theme);
 		}
@@ -148,7 +150,7 @@ public class AudioManager : MonoBehaviour
 		yield return null;
 
 		// If null then fade all themes
-		if (themeName == null || themeName.Length == 0)
+		if (string.IsNullOrEmpty(themeName))
 		{
 			ActiveTheme = null;
 			yield break;
